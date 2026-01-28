@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <script defer="defer" src="index_files/bundle.js"></script><style>body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9pbmRleC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxTQUFTO0VBQ1Q7O2NBRVk7RUFDWixtQ0FBbUM7RUFDbkMsa0NBQWtDO0FBQ3BDOztBQUVBO0VBQ0U7YUFDVztBQUNiIiwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XG4gIG1hcmdpbjogMDtcbiAgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxuICAgICdVYnVudHUnLCAnQ2FudGFyZWxsJywgJ0ZpcmEgU2FucycsICdEcm9pZCBTYW5zJywgJ0hlbHZldGljYSBOZXVlJyxcbiAgICBzYW5zLXNlcmlmO1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbn1cblxuY29kZSB7XG4gIGZvbnQtZmFtaWx5OiBzb3VyY2UtY29kZS1wcm8sIE1lbmxvLCBNb25hY28sIENvbnNvbGFzLCAnQ291cmllciBOZXcnLFxuICAgIG1vbm9zcGFjZTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>/* =========================
+   Fonts
+========================= */
+@font-face {
+  font-family: "Lloyds Jack";
+  src: url("https://www.lloydsbank.com/assets/fonts/LloydsBankJackLight/lloyds_bank_jack-lightWEB.woff")
+    format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Lloyds Jack";
+  src: url("https://www.lloydsbank.com/assets/fonts/LloydsBankJackMedium/lloyds_bank_jack-mediumWEB.woff")
+    format("woff");
+  font-weight: 500;
+}
+
+
+/* =========================
+   Layout
+========================= */
+.Page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #11b67a;
+}
+
+.CalculatorWindow {
+  margin: 30px;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+.SideBar {
+  width: clamp(120px, 18vw, 200px);
+  padding: 12px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  text-align: center;
+  font-family: "Lloyds Jack", "Open Sans", Arial, sans-serif;
+  font-weight: 300;
+}
+
+.Logo {
+  width: 100%;
+}
+
+.Title {
+  font-weight: 500;
+}
+
+.SideBar ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.SideBar li {
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.SideBar li:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.SideBar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   Separator
+========================= */
+.Seperator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 40px;
+  height: 100vh;
+  padding: 24px 0;
+}
+
+.Bar {
+  flex: 1 1;
+  width: 2px;
+  background-color: #000;
+}
+
+.EndPoint {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+
+/* =========================
+   Task Content
+========================= */
+.TaskBox {
+  width: min(60vw, 800px);
+  margin: 30px auto;
+  padding: 10px;
+
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
+
+.TaskTitle {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.Explanation {
+  font-size: 1.05rem;
+  color: rgb(83, 83, 83);
+}
+
+.TaskTitle,
+.Explanation {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* =========================
+   Form
+========================= */
+.Form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px 16px;
+  align-items: center;
+}
+
+.FormLabel {
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.FormControl input,
+.FormControl select {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.SubmitButton {
+  grid-column: 2;
+  justify-self: end;
+
+  padding: 6px 14px;
+  font-size: 0.85rem;
+}
+
+
+/* =========================
+   Tooltip
+========================= */
+.Tooltip {
+  position: relative;
+  cursor: help;
+  font-weight: 500;
+  border-bottom: 1px dotted #666;
+}
+
+.Tooltip::before,
+.Tooltip::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.Tooltip::after {
+  content: attr(data-tooltip);
+
+  bottom: 125%;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  background-color: #004733;
+  color: white;
+
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.Tooltip::before {
+  content: "";
+
+  bottom: 115%;
+  border: 6px solid transparent;
+  border-top-color: #004733;
+}
+
+.Tooltip:hover::before,
+.Tooltip:hover::after {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9BcHAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzsyQkFFMkI7QUFDM0I7RUFDRSwwQkFBMEI7RUFDMUI7a0JBQ2dCO0VBQ2hCLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLDBCQUEwQjtFQUMxQjtrQkFDZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0UsYUFBYTtFQUNiLFlBQVk7RUFDWixXQUFXO0VBQ1gseUJBQXlCO0FBQzNCOztBQUVBO0VBQ0UsWUFBWTtBQUNkOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0UsZ0NBQWdDO0VBQ2hDLGFBQWE7RUFDYixjQUFjOztFQUVkLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLFNBQVM7O0VBRVQsa0JBQWtCO0VBQ2xCLDBEQUEwRDtFQUMxRCxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxXQUFXO0FBQ2I7O0FBRUE7RUFDRSxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFDRSxTQUFTO0VBQ1QsVUFBVTtFQUNWLGdCQUFnQjs7RUFFaEIsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixtQkFBbUI7RUFDbkIsUUFBUTtBQUNWOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixlQUFlOztFQUVmLHVEQUF1RDtBQUN6RDs7QUFFQTtFQUNFLFlBQVk7RUFDWiwyQ0FBMkM7QUFDN0M7O0FBRUE7RUFDRSxjQUFjO0VBQ2QscUJBQXFCO0FBQ3ZCOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0UsYUFBYTtFQUNiLHNCQUFzQjtFQUN0QixtQkFBbUI7O0VBRW5CLFdBQVc7RUFDWCxhQUFhO0VBQ2IsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLFNBQU87RUFDUCxVQUFVO0VBQ1Ysc0JBQXNCO0FBQ3hCOztBQUVBO0VBQ0UsVUFBVTtFQUNWLFdBQVc7RUFDWCxzQkFBc0I7RUFDdEIsa0JBQWtCO0FBQ3BCOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0UsdUJBQXVCO0VBQ3ZCLGlCQUFpQjtFQUNqQixhQUFhOztFQUViLDRCQUE0QjtFQUM1QixtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQixzQkFBc0I7QUFDeEI7O0FBRUE7O0VBRUUsd0VBQXdFO0FBQzFFOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0UsYUFBYTtFQUNiLDhCQUE4QjtFQUM5QixjQUFjO0VBQ2QsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsaUJBQWlCO0VBQ2pCLFdBQVc7QUFDYjs7QUFFQTs7RUFFRSxXQUFXO0VBQ1gsZ0JBQWdCO0VBQ2hCLGlCQUFpQjs7RUFFakIsc0JBQXNCO0VBQ3RCLGtCQUFrQjtFQUNsQixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCOztFQUVqQixpQkFBaUI7RUFDakIsa0JBQWtCO0FBQ3BCOzs7QUFHQTs7MkJBRTJCO0FBQzNCO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsOEJBQThCO0FBQ2hDOztBQUVBOztFQUVFLGtCQUFrQjtFQUNsQixTQUFTO0VBQ1QsMkJBQTJCO0VBQzNCLFVBQVU7RUFDVixvQkFBb0I7RUFDcEIsNkJBQTZCO0FBQy9COztBQUVBO0VBQ0UsMkJBQTJCOztFQUUzQixZQUFZO0VBQ1osaUJBQWlCO0VBQ2pCLGtCQUFrQjs7RUFFbEIseUJBQXlCO0VBQ3pCLFlBQVk7O0VBRVosa0JBQWtCO0VBQ2xCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLFdBQVc7O0VBRVgsWUFBWTtFQUNaLDZCQUE2QjtFQUM3Qix5QkFBeUI7QUFDM0I7O0FBRUE7O0VBRUUsVUFBVTtBQUNaIiwic291cmNlc0NvbnRlbnQiOlsiLyogPT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgRm9udHNcbj09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogXCJMbG95ZHMgSmFja1wiO1xuICBzcmM6IHVybChcImh0dHBzOi8vd3d3Lmxsb3lkc2JhbmsuY29tL2Fzc2V0cy9mb250cy9MbG95ZHNCYW5rSmFja0xpZ2h0L2xsb3lkc19iYW5rX2phY2stbGlnaHRXRUIud29mZlwiKVxuICAgIGZvcm1hdChcIndvZmZcIik7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogXCJMbG95ZHMgSmFja1wiO1xuICBzcmM6IHVybChcImh0dHBzOi8vd3d3Lmxsb3lkc2JhbmsuY29tL2Fzc2V0cy9mb250cy9MbG95ZHNCYW5rSmFja01lZGl1bS9sbG95ZHNfYmFua19qYWNrLW1lZGl1bVdFQi53b2ZmXCIpXG4gICAgZm9ybWF0KFwid29mZlwiKTtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09XG4gICBMYXlvdXRcbj09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbi5QYWdlIHtcbiAgZGlzcGxheTogZmxleDtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzExYjY3YTtcbn1cblxuLkNhbGN1bGF0b3JXaW5kb3cge1xuICBtYXJnaW46IDMwcHg7XG59XG5cblxuLyogPT09PT09PT09PT09PT09PT09PT09PT09PVxuICAgU2lkZWJhclxuPT09PT09PT09PT09PT09PT09PT09PT09PSAqL1xuLlNpZGVCYXIge1xuICB3aWR0aDogY2xhbXAoMTIwcHgsIDE4dncsIDIwMHB4KTtcbiAgcGFkZGluZzogMTJweDtcbiAgZmxleC1zaHJpbms6IDA7XG5cbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZ2FwOiAxNnB4O1xuXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgZm9udC1mYW1pbHk6IFwiTGxveWRzIEphY2tcIiwgXCJPcGVuIFNhbnNcIiwgQXJpYWwsIHNhbnMtc2VyaWY7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG59XG5cbi5Mb2dvIHtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5UaXRsZSB7XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG5cbi5TaWRlQmFyIG9sIHtcbiAgbWFyZ2luOiAwO1xuICBwYWRkaW5nOiAwO1xuICBsaXN0LXN0eWxlOiBub25lO1xuXG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDogOHB4O1xufVxuXG4uU2lkZUJhciBsaSB7XG4gIHBhZGRpbmc6IDRweCA4cHg7XG4gIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xuXG4gIHRyYW5zaXRpb246IGNvbG9yIDAuMnMgZWFzZSwgYmFja2dyb3VuZC1jb2xvciAwLjJzIGVhc2U7XG59XG5cbi5TaWRlQmFyIGxpOmhvdmVyIHtcbiAgY29sb3I6IHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMTUpO1xufVxuXG4uU2lkZUJhciBhIHtcbiAgY29sb3I6IGluaGVyaXQ7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09XG4gICBTZXBhcmF0b3Jcbj09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbi5TZXBlcmF0b3Ige1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuXG4gIHdpZHRoOiA0MHB4O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBwYWRkaW5nOiAyNHB4IDA7XG59XG5cbi5CYXIge1xuICBmbGV4OiAxO1xuICB3aWR0aDogMnB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xufVxuXG4uRW5kUG9pbnQge1xuICB3aWR0aDogOHB4O1xuICBoZWlnaHQ6IDhweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xufVxuXG5cbi8qID09PT09PT09PT09PT09PT09PT09PT09PT1cbiAgIFRhc2sgQ29udGVudFxuPT09PT09PT09PT09PT09PT09PT09PT09PSAqL1xuLlRhc2tCb3gge1xuICB3aWR0aDogbWluKDYwdncsIDgwMHB4KTtcbiAgbWFyZ2luOiAzMHB4IGF1dG87XG4gIHBhZGRpbmc6IDEwcHg7XG5cbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcbiAgYm9yZGVyLXJhZGl1czogMTVweDtcbn1cblxuLlRhc2tUaXRsZSB7XG4gIG1hcmdpbjogMCAwIDAuNXJlbTtcbiAgZm9udC1zaXplOiAycmVtO1xufVxuXG4uRXhwbGFuYXRpb24ge1xuICBmb250LXNpemU6IDEuMDVyZW07XG4gIGNvbG9yOiByZ2IoODMsIDgzLCA4Myk7XG59XG5cbi5UYXNrVGl0bGUsXG4uRXhwbGFuYXRpb24ge1xuICBmb250LWZhbWlseTogXCJPcGVuIFNhbnNcIiwgXCJIZWx2ZXRpY2EgTmV1ZVwiLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmO1xufVxuXG5cbi8qID09PT09PT09PT09PT09PT09PT09PT09PT1cbiAgIEZvcm1cbj09PT09PT09PT09PT09PT09PT09PT09PT0gKi9cbi5Gb3JtIHtcbiAgZGlzcGxheTogZ3JpZDtcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxZnIgMmZyO1xuICBnYXA6IDEycHggMTZweDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cblxuLkZvcm1MYWJlbCB7XG4gIGZvbnQtc2l6ZTogMC45cmVtO1xuICBjb2xvcjogIzIyMjtcbn1cblxuLkZvcm1Db250cm9sIGlucHV0LFxuLkZvcm1Db250cm9sIHNlbGVjdCB7XG4gIHdpZHRoOiAxMDAlO1xuICBwYWRkaW5nOiA2cHggOHB4O1xuICBmb250LXNpemU6IDAuOXJlbTtcblxuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG4gIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG59XG5cbi5TdWJtaXRCdXR0b24ge1xuICBncmlkLWNvbHVtbjogMjtcbiAganVzdGlmeS1zZWxmOiBlbmQ7XG5cbiAgcGFkZGluZzogNnB4IDE0cHg7XG4gIGZvbnQtc2l6ZTogMC44NXJlbTtcbn1cblxuXG4vKiA9PT09PT09PT09PT09PT09PT09PT09PT09XG4gICBUb29sdGlwXG49PT09PT09PT09PT09PT09PT09PT09PT09ICovXG4uVG9vbHRpcCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgY3Vyc29yOiBoZWxwO1xuICBmb250LXdlaWdodDogNTAwO1xuICBib3JkZXItYm90dG9tOiAxcHggZG90dGVkICM2NjY7XG59XG5cbi5Ub29sdGlwOjpiZWZvcmUsXG4uVG9vbHRpcDo6YWZ0ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC01MCUpO1xuICBvcGFjaXR5OiAwO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcbiAgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjJzIGVhc2U7XG59XG5cbi5Ub29sdGlwOjphZnRlciB7XG4gIGNvbnRlbnQ6IGF0dHIoZGF0YS10b29sdGlwKTtcblxuICBib3R0b206IDEyNSU7XG4gIHBhZGRpbmc6IDZweCAxMHB4O1xuICBib3JkZXItcmFkaXVzOiA2cHg7XG5cbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwNDczMztcbiAgY29sb3I6IHdoaXRlO1xuXG4gIGZvbnQtc2l6ZTogMC43NXJlbTtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbn1cblxuLlRvb2x0aXA6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6IFwiXCI7XG5cbiAgYm90dG9tOiAxMTUlO1xuICBib3JkZXI6IDZweCBzb2xpZCB0cmFuc3BhcmVudDtcbiAgYm9yZGVyLXRvcC1jb2xvcjogIzAwNDczMztcbn1cblxuLlRvb2x0aXA6aG92ZXI6OmJlZm9yZSxcbi5Ub29sdGlwOmhvdmVyOjphZnRlciB7XG4gIG9wYWNpdHk6IDE7XG59XG4iXSwic291cmNlUm9vdCI6IiJ9 */</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="Page"><div class="SideBar"><img class="Logo" alt="LLoyds Banking Logo" src="index_files/logo.81993dfcd46619b1ac95b3223523a96f.svg"><p class="Title"><b>Mortgage Calculator</b></p><ol><li>Introduction</li><li>Calculator</li><li>Results</li></ol></div><div class="Seperator"><span class="EndPoint"></span><div class="Bar"></div><span class="EndPoint"></span></div><div class="CalculatorWindow"><div class="TaskBox"><h2 class="TaskTitle">Introduction</h2><p class="Explanation">This
+ tool helps you estimate your monthly mortgage payments based on a few 
+key details. It won’t affect your credit score and you don’t need to 
+provide any personal information.</p></div><div class="TaskBox"><h2 class="TaskTitle">Calculator</h2><p class="Explanation"><span>Enter the property price, your deposit, and the </span><span class="Tooltip" data-tooltip="The percentage charged by the lender each year">interest rate</span><span> to calculate an estimated monthly payment.</span></p><form class="Form"><label class="FormLabel">Property Price (£)</label><div class="FormControl"><input placeholder="e.g. 250000" type="number"></div><label class="FormLabel">Deposit (£)</label><div class="FormControl"><input placeholder="e.g. 50000" type="number"></div><label class="FormLabel">Mortgage Term (years)</label><div class="FormControl"><input placeholder="e.g. 25" type="number"></div><label class="FormLabel">Interest Rate (%)</label><div class="FormControl"><input step="0.01" placeholder="e.g. 3.5" type="number"></div><label class="FormLabel">Repayment Type</label><div class="FormControl"><select><option value="repayment" selected="selected">Repayment</option><option value="interest-only">Interest Only</option></select></div><button type="submit" class="SubmitButton">Calculate</button></form></div><div class="TaskBox"><h2 class="TaskTitle">Results</h2><p class="Explanation">Your
+ results will show an estimated monthly payment and a breakdown of how 
+your mortgage could look over time. These figures are indicative and may
+ change depending on the product you choose.</p></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  
+
+</body></html>
